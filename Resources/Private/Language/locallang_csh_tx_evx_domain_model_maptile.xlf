@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-03-30T23:59:13Z" product-name="evx">
+		<header/>
+		<body>
+			<trans-unit id="x.description">
+				<source>x</source>
+			</trans-unit>
+			<trans-unit id="y.description">
+				<source>y</source>
+			</trans-unit>
+			<trans-unit id="map.description">
+				<source>map</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
