@@ -3,6 +3,7 @@ return [
 	'ctrl' => [
 		'title' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_maptile',
 		'label' => 'x',
+		'label_userFunc' => \Ps\Evx\Service\TcaService::class . '->getTileTitle',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
