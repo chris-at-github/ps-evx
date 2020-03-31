@@ -4,6 +4,7 @@
 CREATE TABLE tx_evx_domain_model_map (
 
 	title varchar(255) DEFAULT '' NOT NULL,
+	tiles int(11) unsigned DEFAULT '0',
 
 );
 

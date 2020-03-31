@@ -9,6 +9,9 @@
 			<trans-unit id="tx_evx_domain_model_map.title">
 				<source>Title</source>
 			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_map.tiles">
+				<source>Tiles</source>
+			</trans-unit>
 			<trans-unit id="tx_evx_domain_model_maptile">
 				<source>Map Tile</source>
 			</trans-unit>
