@@ -20,14 +20,14 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 		$this->view->assign('maps', $this->objectManager->get(MapRepository::class)->findAll());
 	}
 
-//	/**
-//	 * @param \Ps\Ki\Domain\Model\Game $game
-//	 * @param array $options
-//	 * @return void
-//	 */
-//	public function createAction(Game $game, $options = []) {
-//		$this->objectManager->get(GameRepository::class)->add($game);
-//
+	/**
+	 * @param \Ps\Ki\Domain\Model\Game $game
+	 * @param array $options
+	 * @return void
+	 */
+	public function createAction(Game $game, $options = []) {
+		$this->objectManager->get(GameRepository::class)->add($game);
+
 //		foreach([
 //							\Ps\Ki\Processor\GameCreator\MapCreator::class,
 //							\Ps\Ki\Processor\GameCreator\PlayerCreator::class
@@ -39,7 +39,7 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 //		}
 //
 //		$this->redirect('index');
-//	}
+	}
 //
 //	/**
 //	 * @param \Ps\Ki\Domain\Model\Game $game

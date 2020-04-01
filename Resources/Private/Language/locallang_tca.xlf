@@ -24,11 +24,14 @@
 			<trans-unit id="tx_evx_domain_model_maptile.map">
 				<source>Map</source>
 			</trans-unit>
-			<trans-unit id="tx_evx_frontend.name">
-				<source>Frontend</source>
+			<trans-unit id="tx_evx_domain_model_game">
+				<source>Game</source>
 			</trans-unit>
-			<trans-unit id="tx_evx_frontend.description">
-				<source></source>
+			<trans-unit id="tx_evx_domain_model_game.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_game.map">
+				<source>Map</source>
 			</trans-unit>
 		</body>
 	</file>
