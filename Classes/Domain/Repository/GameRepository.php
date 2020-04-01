@@ -16,7 +16,7 @@ namespace Ps\Evx\Domain\Repository;
 /**
  * The repository for Maps
  */
-class MapRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class GameRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
 	 * @var array

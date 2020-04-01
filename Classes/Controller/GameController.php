@@ -2,9 +2,9 @@
 
 namespace Ps\Evx\Controller;
 
-//use Ps\Ki\Domain\Model\Game;
-//use Ps\Ki\Domain\Model\Map;
-//use Ps\Ki\Domain\Repository\GameRepository;
+use Ps\Evx\Domain\Model\Game;
+use Ps\Evx\Domain\Model\Map;
+use Ps\Evx\Domain\Repository\GameRepository;
 use Ps\Evx\Domain\Repository\MapRepository;
 //use Ps\Ki\Domain\Repository\QueueRepository;
 //use Ps\Ki\Processor\Queue\SettlementProcessor;
@@ -16,12 +16,12 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 * @return void
 	 */
 	public function indexAction() {
-		//$this->view->assign('games', $this->objectManager->get(GameRepository::class)->findAll());
+		$this->view->assign('games', $this->objectManager->get(GameRepository::class)->findAll());
 		$this->view->assign('maps', $this->objectManager->get(MapRepository::class)->findAll());
 	}
 
 	/**
-	 * @param \Ps\Ki\Domain\Model\Game $game
+	 * @param \Ps\Evx\Domain\Model\Game $game
 	 * @param array $options
 	 * @return void
 	 */
