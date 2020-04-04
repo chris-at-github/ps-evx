@@ -33,6 +33,15 @@
 			<trans-unit id="tx_evx_domain_model_game.map">
 				<source>Map</source>
 			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_gamemaptile">
+				<source>Game Map Tile</source>
+			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_gamemaptile.game">
+				<source>Game</source>
+			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_gamemaptile.origin">
+				<source>Origin</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
