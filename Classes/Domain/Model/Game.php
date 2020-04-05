@@ -29,6 +29,11 @@ class Game extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $map = null;
 
+	/**
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Evx\Domain\Model\GameMapTile>
+	 * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+	 */
+	protected $tiles = null;
 
 //	/**
 //	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Evx\Domain\Model\GamePlayer>
@@ -47,6 +52,7 @@ class Game extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return void
 	 */
 	protected function initStorageObjects()	{
+		$this->tiles = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 //		$this->players = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
@@ -86,6 +92,45 @@ class Game extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setMap(\Ps\Evx\Domain\Model\Map $map) {
 		$this->map = $map;
+	}
+
+	/**
+	 * Adds a MapTile
+	 *
+	 * @param \Ps\Evx\Domain\Model\GameMapTile $tile
+	 * @return void
+	 */
+	public function addTile(\Ps\Evx\Domain\Model\GameMapTile $tile) {
+		$this->tiles->attach($tile);
+	}
+
+	/**
+	 * Removes a MapTile
+	 *
+	 * @param \Ps\Evx\Domain\Model\GameMapTile $tile The MapTile to be removed
+	 * @return void
+	 */
+	public function removeTile(\Ps\Evx\Domain\Model\GameMapTile $tile)	{
+		$this->tiles->detach($tile);
+	}
+
+	/**
+	 * Returns the tiles
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Evx\Domain\Model\GameMapTile> $tiles
+	 */
+	public function getTiles() {
+		return $this->tiles;
+	}
+
+	/**
+	 * Sets the tiles
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Evx\Domain\Model\GameMapTile> $tiles
+	 * @return void
+	 */
+	public function setTiles(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tiles) {
+		$this->tiles = $tiles;
 	}
 
 //	/**
