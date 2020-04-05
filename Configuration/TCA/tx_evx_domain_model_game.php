@@ -21,10 +21,10 @@ return [
 		'iconfile' => 'EXT:evx/Resources/Public/Icons/tx_evx_domain_model_game.gif'
 	],
 	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, map, players',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, map, tiles, players',
 	],
 	'types' => [
-		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, map, players, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, map, tiles, players, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
 	],
 	'columns' => [
 		'sys_language_uid' => [
@@ -140,20 +140,20 @@ return [
 				'hideSuggest' => 1,
 			]
 		],
-//		'regions' => [
-//			'exclude' => 1,
-//			'label' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_game.regions',
-//			'config' => [
-//				'type' => 'inline',
-//				'foreign_table' => 'tx_evx_domain_model_gamemapregion',
-//				'foreign_field' => 'game',
-//				'maxitems' => 100,
-//				'appearance' => [
-//					'collapseAll' => 1,
-//					'expandSingle' => 1,
-//				],
-//			],
-//		],
+		'tiles' => [
+			'exclude' => 1,
+			'label' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_game.tiles',
+			'config' => [
+				'type' => 'inline',
+				'foreign_table' => 'tx_evx_domain_model_gamemaptile',
+				'foreign_field' => 'game',
+				'maxitems' => 10000,
+				'appearance' => [
+					'collapseAll' => 1,
+					'expandSingle' => 1,
+				],
+			],
+		],
 //		'players' => [
 //			'exclude' => 1,
 //			'label' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_game.players',
