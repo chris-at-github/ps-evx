@@ -8,6 +8,8 @@ use Ps\Evx\Domain\Repository\GameRepository;
 use Ps\Evx\Domain\Repository\MapRepository;
 //use Ps\Ki\Domain\Repository\QueueRepository;
 //use Ps\Ki\Processor\Queue\SettlementProcessor;
+use Ps\Evx\Processor\GameCreator\AbstractCreator;
+use Ps\Evx\Processor\GameCreator\MapCreator;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
@@ -28,17 +30,16 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	public function createAction(Game $game, $options = []) {
 		$this->objectManager->get(GameRepository::class)->add($game);
 
-//		foreach([
-//							\Ps\Ki\Processor\GameCreator\MapCreator::class,
-//							\Ps\Ki\Processor\GameCreator\PlayerCreator::class
-//						] as $fqcn) {
-//
-//			/** @var \Ps\Ki\Processor\GameCreator\AbstractCreator $gameCreator */
-//			$gameCreator = $this->objectManager->get($fqcn);
-//			$gameCreator->create($game, $options);
-//		}
-//
-//		$this->redirect('index');
+		foreach([
+			MapCreator::class,
+		] as $fqcn) {
+
+			/** @var AbstractCreator $gameCreator */
+			$gameCreator = $this->objectManager->get($fqcn);
+			$gameCreator->create($game, $options);
+		}
+
+		$this->redirect('index');
 	}
 //
 //	/**
