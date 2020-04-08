@@ -12,6 +12,7 @@ class TcaService {
 	 * @param $parentObject
 	 */
 	public function getTileTitle(&$parameter) {
-		$parameter['title'] = $parameter['row']['x'] . ' | ' . $parameter['row']['y'];
+		$record = BackendUtility::getRecord($parameter['table'], (int) $parameter['row']['uid']);
+		$parameter['title'] = $record['x'] . ' | ' . $record['y'];
 	}
 }
