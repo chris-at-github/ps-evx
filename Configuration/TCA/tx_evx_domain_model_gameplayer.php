@@ -1,7 +1,7 @@
 <?php
 return [
 	'ctrl' => [
-		'title' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_game',
+		'title' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_gameplayer',
 		'label' => 'title',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
@@ -18,13 +18,13 @@ return [
 			'endtime' => 'endtime',
 		],
 		'searchFields' => 'title',
-		'iconfile' => 'EXT:evx/Resources/Public/Icons/tx_evx_domain_model_game.gif'
+		'iconfile' => 'EXT:evx/Resources/Public/Icons/tx_evx_domain_model_gameplayer.gif'
 	],
 	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, map, tiles, players',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, game',
 	],
 	'types' => [
-		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, map, tiles, players, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, game, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
 	],
 	'columns' => [
 		'sys_language_uid' => [
@@ -55,8 +55,8 @@ return [
 				'items' => [
 					['', 0],
 				],
-				'foreign_table' => 'tx_evx_domain_model_game',
-				'foreign_table_where' => 'AND {#tx_evx_domain_model_game}.{#pid}=###CURRENT_PID### AND {#tx_evx_domain_model_game}.{#sys_language_uid} IN (-1,0)',
+				'foreign_table' => 'tx_evx_domain_model_gameplayer',
+				'foreign_table_where' => 'AND {#tx_evx_domain_model_gameplayer}.{#pid}=###CURRENT_PID### AND {#tx_evx_domain_model_gameplayer}.{#sys_language_uid} IN (-1,0)',
 			],
 		],
 		'l10n_diffsource' => [
@@ -119,54 +119,24 @@ return [
 
 		'title' => [
 			'exclude' => true,
-			'label' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_game.title',
+			'label' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_gameplayer.title',
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim'
 			],
 		],
-		'map' => [
+		'game' => [
 			'exclude' => true,
-			'label' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_game.map',
+			'label' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_gameplayer.game',
 			'config' => [
-				'type' => 'group',
-				'internal_type' => 'db',
-				'allowed' => 'tx_evx_domain_model_map',
-				'maxitems' => 1,
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'foreign_table' => 'tx_evx_domain_model_game',
 				'minitems' => 0,
-				'size' => 1,
-				'default' => 0,
-				'hideSuggest' => 1,
-			]
-		],
-		'tiles' => [
-			'exclude' => 1,
-			'label' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_game.tiles',
-			'config' => [
-				'type' => 'inline',
-				'foreign_table' => 'tx_evx_domain_model_gamemaptile',
-				'foreign_field' => 'game',
-				'maxitems' => 10000,
-				'appearance' => [
-					'collapseAll' => 1,
-					'expandSingle' => 1,
-				],
+				'maxitems' => 1,
 			],
 		],
-		'players' => [
-			'exclude' => 1,
-			'label' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_game.players',
-			'config' => [
-				'type' => 'inline',
-				'foreign_table' => 'tx_evx_domain_model_gameplayer',
-				'foreign_field' => 'game',
-				'maxitems' => 100,
-				'appearance' => [
-					'collapseAll' => 1,
-					'expandSingle' => 1,
-				],
-			],
-		],
+
 	],
 ];

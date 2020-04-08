@@ -35,11 +35,11 @@ class Game extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $tiles = null;
 
-//	/**
-//	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Evx\Domain\Model\GamePlayer>
-//	 * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
-//	 */
-//	protected $players = null;
+	/**
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Evx\Domain\Model\GamePlayer>
+	 * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+	 */
+	protected $players = null;
 
 	/**
 	 * __construct
@@ -53,7 +53,7 @@ class Game extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected function initStorageObjects()	{
 		$this->tiles = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-//		$this->players = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->players = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -133,34 +133,34 @@ class Game extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->tiles = $tiles;
 	}
 
-//	/**
-//	 * @param \Ps\Evx\Domain\Model\GamePlayer $player
-//	 * @return void
-//	 */
-//	public function addPlayer(\Ps\Evx\Domain\Model\GamePlayer $player) {
-//		$this->players->attach($player);
-//	}
-//
-//	/**
-//	 * @param \Ps\Evx\Domain\Model\GamePlayer $player
-//	 * @return void
-//	 */
-//	public function removePlayer(\Ps\Evx\Domain\Model\GamePlayer $player) {
-//		$this->players->detach($player);
-//	}
-//
-//	/**
-//	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Evx\Domain\Model\GamePlayer> $players
-//	 */
-//	public function getPlayers() {
-//		return $this->players;
-//	}
-//
-//	/**
-//	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Evx\Domain\Model\GamePlayer> $players
-//	 * @return void
-//	 */
-//	public function setPlayers(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $players) {
-//		$this->players = $players;
-//	}
+	/**
+	 * @param \Ps\Evx\Domain\Model\GamePlayer $player
+	 * @return void
+	 */
+	public function addPlayer(\Ps\Evx\Domain\Model\GamePlayer $player) {
+		$this->players->attach($player);
+	}
+
+	/**
+	 * @param \Ps\Evx\Domain\Model\GamePlayer $player
+	 * @return void
+	 */
+	public function removePlayer(\Ps\Evx\Domain\Model\GamePlayer $player) {
+		$this->players->detach($player);
+	}
+
+	/**
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Evx\Domain\Model\GamePlayer> $players
+	 */
+	public function getPlayers() {
+		return $this->players;
+	}
+
+	/**
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Evx\Domain\Model\GamePlayer> $players
+	 * @return void
+	 */
+	public function setPlayers(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $players) {
+		$this->players = $players;
+	}
 }

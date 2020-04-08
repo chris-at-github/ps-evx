@@ -36,6 +36,9 @@
 			<trans-unit id="tx_evx_domain_model_game.tiles">
 				<source>Tiles</source>
 			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_game.players">
+				<source>Players</source>
+			</trans-unit>
 			<trans-unit id="tx_evx_domain_model_gamemaptile">
 				<source>Game Map Tile</source>
 			</trans-unit>
@@ -44,6 +47,12 @@
 			</trans-unit>
 			<trans-unit id="tx_evx_domain_model_gamemaptile.origin">
 				<source>Origin</source>
+			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_gameplayer">
+				<source>Game Player</source>
+			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_gameplayer.title">
+				<source>Title</source>
 			</trans-unit>
 		</body>
 	</file>
