@@ -2,8 +2,8 @@
 
 namespace Ps\Evx\Processor\GameCreator;
 
-//use Ps\Evx\Domain\Model\Game;
-//use Ps\Evx\Domain\Model\GamePlayer;
+use Ps\Evx\Domain\Model\Game;
+use Ps\Evx\Domain\Model\GamePlayer;
 
 /***
  *
@@ -16,19 +16,19 @@ namespace Ps\Evx\Processor\GameCreator;
  *
  ***/
 
-//class PlayerCreator extends AbstractCreator {
+class PlayerCreator extends AbstractCreator {
 
-//	/**
-//	 * @param \Ps\Ki\Domain\Model\Game $game
-//	 * @param array $options
-//	 * @return void
-//	 */
-//	public function create(Game $game, $options) {
-//
-//		/** @var \Ps\Ki\Domain\Model\GamePlayer $gamePlayer */
-//		$gamePlayer = $this->objectManager->get(GamePlayer::class);
-//		$gamePlayer->setTitle('Player #' . time());
-//
-//		$game->addPlayer($gamePlayer);
-//	}
-//}
+	/**
+	 * @param \Ps\Evx\Domain\Model\Game $game
+	 * @param array $options
+	 * @return void
+	 */
+	public function create(Game $game, $options) {
+
+		/** @var GamePlayer $gamePlayer */
+		$gamePlayer = $this->objectManager->get(GamePlayer::class);
+		$gamePlayer->setTitle('Player #' . time());
+
+		$game->addPlayer($gamePlayer);
+	}
+}

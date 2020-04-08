@@ -10,6 +10,7 @@ use Ps\Evx\Domain\Repository\MapRepository;
 //use Ps\Ki\Processor\Queue\SettlementProcessor;
 use Ps\Evx\Processor\GameCreator\AbstractCreator;
 use Ps\Evx\Processor\GameCreator\MapCreator;
+use Ps\Evx\Processor\GameCreator\PlayerCreator;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
@@ -32,6 +33,7 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 
 		foreach([
 			MapCreator::class,
+			PlayerCreator::class,
 		] as $fqcn) {
 
 			/** @var AbstractCreator $gameCreator */
@@ -41,20 +43,20 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 
 		$this->redirect('index');
 	}
-//
-//	/**
-//	 * @param \Ps\Ki\Domain\Model\Game $game
-//	 * @return void
-//	 */
-//	public function playgroundAction(Game $game) {
-//		$this->view->assign('game', $game);
+
+	/**
+	 * @param \Ps\Ki\Domain\Model\Game $game
+	 * @return void
+	 */
+	public function playgroundAction(Game $game) {
+		$this->view->assign('game', $game);
 //		$this->view->assign('queueProcessors', [
 //			SettlementProcessor::class
 //		]);
 //		$this->view->assign('queue', $this->objectManager->get(QueueRepository::class)->findAll([
 //			'game' => $game
 //		]));
-//
-//		// DebuggerUtility::var_dump($game);
-//	}
+
+		// DebuggerUtility::var_dump($game);
+	}
 }
