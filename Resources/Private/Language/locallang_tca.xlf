@@ -54,6 +54,9 @@
 			<trans-unit id="tx_evx_domain_model_gameplayer.title">
 				<source>Title</source>
 			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_gameplayer.game">
+				<source>Game</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

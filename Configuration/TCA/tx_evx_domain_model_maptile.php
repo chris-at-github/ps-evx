@@ -140,11 +140,14 @@ return [
 			'exclude' => true,
 			'label' => 'LLL:EXT:evx/Resources/Private/Language/locallang_tca.xlf:tx_evx_domain_model_maptile.map',
 			'config' => [
-				'type' => 'select',
-				'renderType' => 'selectSingle',
-				'foreign_table' => 'tx_evx_domain_model_map',
-				'minitems' => 0,
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => 'tx_evx_domain_model_map',
 				'maxitems' => 1,
+				'minitems' => 0,
+				'size' => 1,
+				'default' => 0,
+				'hideSuggest' => 1,
 			],
 		],
 
