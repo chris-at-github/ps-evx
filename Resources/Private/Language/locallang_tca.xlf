@@ -57,6 +57,21 @@
 			<trans-unit id="tx_evx_domain_model_gameplayer.game">
 				<source>Game</source>
 			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_queue">
+				<source>Queue</source>
+			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_queue.processor">
+				<source>Processor</source>
+			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_queue.turn">
+				<source>Turn</source>
+			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_queue.arguments">
+				<source>Arguments</source>
+			</trans-unit>
+			<trans-unit id="tx_evx_domain_model_queue.game">
+				<source>Game</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
