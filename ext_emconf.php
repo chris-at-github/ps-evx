@@ -11,21 +11,21 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Evx',
-    'description' => '',
-    'category' => 'plugin',
-    'author' => '',
-    'author_email' => '',
-    'state' => 'alpha',
-    'uploadfolder' => 0,
-    'createDirs' => '',
-    'clearCacheOnLoad' => 0,
-    'version' => '0.0.2',
-    'constraints' => [
-        'depends' => [
-            'typo3' => '9.5.0-9.5.99',
-        ],
-        'conflicts' => [],
-        'suggests' => [],
-    ],
+	'title' => 'Evx',
+	'description' => '',
+	'category' => 'plugin',
+	'author' => '',
+	'author_email' => '',
+	'state' => 'alpha',
+	'uploadfolder' => 0,
+	'createDirs' => '',
+	'clearCacheOnLoad' => 0,
+	'version' => '0.0.2',
+	'constraints' => [
+		'depends' => [
+			'typo3' => '9.5.0-9.5.99',
+		],
+		'conflicts' => [],
+		'suggests' => [],
+	],
 ];
