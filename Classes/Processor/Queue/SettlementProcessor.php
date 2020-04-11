@@ -6,7 +6,7 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /***
  *
- * This file is part of the "Ai" Extension for TYPO3 CMS.
+ * This file is part of the "Evx" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
@@ -23,7 +23,7 @@ class SettlementProcessor extends AbstractProcessor {
 	public function create() {
 		$queue = $this->getQueue();
 		//$queue->setArguments($this->getArguments());
-		$queue->setT(0);
+		$queue->setTurn(0);
 
 		$this->store($queue);
 	}
