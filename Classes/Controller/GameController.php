@@ -50,9 +50,9 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 */
 	public function playgroundAction(Game $game) {
 		$this->view->assign('game', $game);
-//		$this->view->assign('queueProcessors', [
-//			SettlementProcessor::class
-//		]);
+		$this->view->assign('queueProcessors', [
+			SettlementProcessor::class
+		]);
 		$this->view->assign('queue', $this->objectManager->get(QueueRepository::class)->findAll([
 			'game' => $game
 		]));
