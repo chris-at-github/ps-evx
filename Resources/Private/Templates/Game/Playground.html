@@ -6,11 +6,9 @@
 			<div class="col-sx-12 col-sm-6">
 				<f:render section="Map" arguments="{_all}" />
 			</div>
-			<f:comment>
-				<div class="col-sx-12 col-sm-6">
-					<f:render section="Queue" arguments="{_all}" />
-				</div>
-			</f:comment>
+			<div class="col-sx-12 col-sm-6">
+				<f:render section="Queue" arguments="{_all}"/>
+			</div>
 		</div>
 </f:section>
 
@@ -35,7 +33,7 @@
 		</div>
 
 		<div class="container">
-			<f:form controller="Queue" action="wizard">
+			<f:form controller="Queue" action="wizard" class="form--layout-0">
 				<div>
 					<f:form.hidden name="game" value="{game}" />
 				</div>
@@ -50,28 +48,28 @@
 				</div>
 
 				<div class="form-action">
-					<button class="form-button" type="submit">Create</button>
+					<button class="button" type="submit">Create</button>
 				</div>
 			</f:form>
 		</div>
 
 		<div class="container">
 			<div>
-				<f:link.action controller="Queue" action="process" arguments="{game: game}">Process</f:link.action>
+				<f:link.action controller="Queue" action="process" arguments="{game: game}" class="button">Process</f:link.action>
 			</div>
 
 			<table class="table--layout-0">
 				<thead>
 				<tr>
 					<th>Processor</th>
-					<th>Expiry time</th>
+					<th>Turn</th>
 				</tr>
 				</thead>
 				<tbody>
 				<f:for each="{queue}" as="item">
 					<tr>
 						<td>{item.processor}</td>
-						<td>{item.expiryDate}</td>
+						<td>{item.turn}</td>
 					</tr>
 				</f:for>
 				</tbody>

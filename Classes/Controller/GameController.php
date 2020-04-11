@@ -6,8 +6,8 @@ use Ps\Evx\Domain\Model\Game;
 use Ps\Evx\Domain\Model\Map;
 use Ps\Evx\Domain\Repository\GameRepository;
 use Ps\Evx\Domain\Repository\MapRepository;
-//use Ps\Ki\Domain\Repository\QueueRepository;
-//use Ps\Ki\Processor\Queue\SettlementProcessor;
+use Ps\Evx\Domain\Repository\QueueRepository;
+use Ps\Evx\Processor\Queue\SettlementProcessor;
 use Ps\Evx\Processor\GameCreator\AbstractCreator;
 use Ps\Evx\Processor\GameCreator\MapCreator;
 use Ps\Evx\Processor\GameCreator\PlayerCreator;
@@ -45,7 +45,7 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	}
 
 	/**
-	 * @param \Ps\Ki\Domain\Model\Game $game
+	 * @param \Ps\Evx\Domain\Model\Game $game
 	 * @return void
 	 */
 	public function playgroundAction(Game $game) {
@@ -53,9 +53,9 @@ class GameController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 //		$this->view->assign('queueProcessors', [
 //			SettlementProcessor::class
 //		]);
-//		$this->view->assign('queue', $this->objectManager->get(QueueRepository::class)->findAll([
-//			'game' => $game
-//		]));
+		$this->view->assign('queue', $this->objectManager->get(QueueRepository::class)->findAll([
+			'game' => $game
+		]));
 
 		// DebuggerUtility::var_dump($game);
 	}
